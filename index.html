@@ -64,12 +64,12 @@
                 else {
                     return s.sendJSON(data);
                 }
-            }
+            };
 
             s.sendJSON = function(object) {
                 data = JSON.stringify(object);
                 return s.send(data);
-            }
+            };
 
         } catch (ex) {
             console.log("Socket exception:", ex);
@@ -82,7 +82,7 @@
                 someParam: 'testing param'
             });
             inputBox.value = "";
-        }, false)
+        }, false);
 
     </script>
 
