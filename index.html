@@ -41,7 +41,14 @@
             };
 
             s.onmessage = function (e) {
-                console.log("Socket message:", e.data);
+                try {
+                    data = JSON.parse(e.data);
+                } catch (ex) {
+                    console.log('Could not Parse JSON: '+e.data);
+                }
+
+                console.log(data);
+                console.log("Socket message:", data);
                 var p = document.createElement("p");
                 p.innerHTML = e.data;
                 output.appendChild(p);
